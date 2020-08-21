@@ -1,0 +1,103 @@
+# Health management system
+
+import datetime
+
+def gettime():
+    return datetime.datetime.now()
+
+
+def take(k):
+    if k == 1:
+        c = int(input("Enter 1=Exercise and 2=Food\n"))
+        if c == 1:
+            value = input("Type here\n")
+            with open("dada_exercise.txt", "a") as op:
+                op.write(f'{gettime()} : {value}\n')
+            print("Successfully added\n")
+        elif c == 2:
+            value = input("Enter here\n")
+            with open("dada_food.txt", "a") as op:
+                op.write(f'{gettime()}:{value}\n')
+            print("Entered successfully")
+
+    #  Mama
+    elif k == 2:
+        c = int(input("Enter 1=Exercise and 2=Food\n"))
+        if c == 1:
+            value = input("Enter here\n")
+            with open("mama exercise.txt", "a") as op:
+                op.write(f'{gettime()} : {value}\n')
+            print("Entered successfully")
+        elif c == 2:
+            value = input("Enter here")
+            with open("mama food.txt", "a") as op:
+                op.write(f'{gettime()} : {value}\n')
+            print("Entered successfully")
+    # kaka
+    elif k == 3:
+        c = int(input("Enter 1=Exercise and 2=Food\n"))
+        if c == 1:
+            value = input("Enter here\n")
+            with open("kaka exercise.txt", "a") as op:
+                op.write(f'{gettime()}:{value}\n')
+            print("Entered successfully")
+        elif c == 2:
+            value = input("Enter here\n")
+            with open("kaka food.txt", "a") as op:
+                op.write(f'{gettime()}:{value}\n')
+            print("Entered successfully")
+    else:
+        print("print enter valid number")
+
+    #     Retrieve function
+
+
+def retrieve(k):
+    if k == 1:
+        c = int(input("Enter 1 for exercise and 2 for food\n"))
+        if c == 1:
+            with open("dada_exercise.txt") as op:
+                for i in op:
+                    print(i, end="")
+        elif c == 2:
+            with open("dada_food.txt") as op:
+                for i in op:
+                    print(i, end="")
+    elif k == 2:
+        c = int(input("Enter 1=Exercise and 2=Food\n"))
+        if c == 1:
+            with open("mama exercise.txt") as op:
+                for i in op:
+                    print(i, end="")
+        elif c == 2:
+            with open("mama food.txt") as op:
+                for i in op:
+                    print(i, end="")
+
+    elif k == 3:
+        c = int(input("Enter 1=Exercise and 2=Food\n"))
+        if c == 1:
+            with open("kaka exercise.txt") as op:
+                for i in op:
+                    print(i, end="")
+        elif c == 2:
+            with open("kaka food.txt") as op:
+                for i in op:
+                    print(i, end="")
+    else:
+        print("Enter valid number")
+
+
+
+
+a = int(input("Press 1 to add\nPress 2 to retrieve\n"))
+# For addition
+if a == 1:
+    k = int(input("1 for dada, 2 for mama,, 3 for kaka,\n"))
+    take(k)
+# For retrieving
+elif a == 2:
+    k = int(input("1 for dada, 2 for mama, 3 for kaka,\n"))
+    retrieve(k)
+else:
+    print("Enter valid number")
